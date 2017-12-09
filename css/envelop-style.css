@@ -1,0 +1,346 @@
+/*
+    @package envelop Contact Form
+*/
+.envelop-logo {
+  margin-top: 10px;
+  display: block;
+  float: left; }
+
+/*
+    @package envelop Contact Form
+*/
+/*
+    Mixins
+    ------------------------------------------------
+*/
+#js-envelop-contact {
+  margin: 0 -15px; }
+
+.envelop-contact-background {
+  min-height: 460px;
+  width: 100%;
+  position: relative;
+  /*Background Gradiant*/
+  background: red;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(-45deg, #A6743C, #E1C59A);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(-45deg, #A6743C, #E1C59A);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(-45deg, #A6743C, #E1C59A);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(-45deg, #A6743C, #E1C59A);
+  /* Standard syntax */ }
+  @media (max-width: 767px) {
+    .envelop-contact-background {
+      min-height: 650px; } }
+
+.envelop-loader {
+  position: absolute;
+  min-height: 460px;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 3;
+  font-size: 200%;
+  padding: 0 20%;
+  text-shadow: 2px 2px #000; }
+  @media (max-width: 767px) {
+    .envelop-loader {
+      height: 100%;
+      min-height: 23.5em;
+      padding: 0; } }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .envelop-loader {
+      height: 100%;
+      min-height: 16em;
+      padding: 0; } }
+  .envelop-loader .text-info {
+    color: #fff; }
+  .envelop-loader .text-danger, .envelop-loader .text-success {
+    color: #fff; }
+    .envelop-loader .text-danger .fa-check-circle, .envelop-loader .text-success .fa-check-circle {
+      display: block;
+      font-size: 400%; }
+    .envelop-loader .text-danger .fa-exclamation-triangle, .envelop-loader .text-success .fa-exclamation-triangle {
+      display: block;
+      font-size: 400%;
+      color: #FFEB00; }
+    .envelop-loader .text-danger .span, .envelop-loader .text-success .span {
+      display: block; }
+  .envelop-loader .close-overlay {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 100%;
+    color: #fff;
+    cursor: pointer; }
+  .envelop-loader .sliding-arrow-loader {
+    position: absolute;
+    top: 30%;
+    left: 55%;
+    font-size: 300%;
+    transform: rotate(90deg); }
+    @media (max-width: 767px) {
+      .envelop-loader .sliding-arrow-loader {
+        left: 60%; } }
+    .envelop-loader .sliding-arrow-loader .arrow {
+      width: 0.4em;
+      height: 0.2em;
+      margin-bottom: -5px;
+      animation: 2050ms iconAnimation ease-in-out infinite;
+      opacity: 0; }
+      .envelop-loader .sliding-arrow-loader .arrow .fa {
+        color: #fff;
+        -ms-transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        padding: 0px;
+        margin: 0px; }
+      .envelop-loader .sliding-arrow-loader .arrow:nth-child(1) {
+        animation-delay: 1.25s; }
+      .envelop-loader .sliding-arrow-loader .arrow:nth-child(2) {
+        animation-delay: 1s; }
+      .envelop-loader .sliding-arrow-loader .arrow:nth-child(3) {
+        animation-delay: 0.75s; }
+      .envelop-loader .sliding-arrow-loader .arrow:nth-child(4) {
+        animation-delay: 0.5s; }
+      .envelop-loader .sliding-arrow-loader .arrow:nth-child(5) {
+        animation-delay: 0.25s; }
+      .envelop-loader .sliding-arrow-loader .arrow:nth-child(6) {
+        animation-delay: 0s; }
+      .no-cssanimations .envelop-loader .sliding-arrow-loader .arrow {
+        opacity: 1; }
+@keyframes iconAnimation {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+.table {
+  display: table;
+  width: 100%;
+  height: 100%; }
+
+.table-cell {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle; }
+
+.envelop-contact-border {
+  min-height: inherit;
+  width: inherit;
+  background: -webkit-repeating-linear-gradient(45deg, #B30003, #B30003 4%, transparent 4%, transparent 8%, #00006E 8%, #00006E 12%, transparent 12%, transparent 16%);
+  background: repeating-linear-gradient(45deg, #B30003, #B30003 4%, transparent 4%, transparent 8%, #00006E 8%, #00006E 12%, transparent 12%, transparent 16%); }
+
+.envelop-contact-content {
+  position: relative;
+  top: 20px;
+  margin: 20px;
+  padding: 20px;
+  font-size: 100%;
+  line-height: 150%;
+  min-height: 410px;
+  /*Background Gradiant*/
+  background: red;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(-45deg, #A6743C, #E1C59A);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(-45deg, #A6743C, #E1C59A);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(-45deg, #A6743C, #E1C59A);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(-45deg, #A6743C, #E1C59A);
+  /* Standard syntax */ }
+  @media (max-width: 767px) {
+    .envelop-contact-content {
+      min-height: 615px; } }
+  .envelop-contact-content .envelop-address {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    padding-top: 3em;
+    color: #A6763E;
+    min-height: 380px; }
+    @media (max-width: 767px) {
+      .envelop-contact-content .envelop-address {
+        padding-top: 5%;
+        min-height: 210px; } }
+    .envelop-contact-content .envelop-address .social-stamps {
+      position: absolute;
+      bottom: 0; }
+      .envelop-contact-content .envelop-address .social-stamps .stamp {
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        padding: 5px;
+        background: #764A22;
+        margin: 0.2em 0;
+        background: radial-gradient(transparent 0px, transparent 3px, #764A22 2px, #764A22);
+        background-size: 10px 10px;
+        background-position: -5px -5px; }
+        .envelop-contact-content .envelop-address .social-stamps .stamp .background {
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          padding-top: 15%; }
+          .envelop-contact-content .envelop-address .social-stamps .stamp .background i {
+            padding: 5%;
+            font-size: 24px;
+            color: #fff;
+            line-height: 100%; }
+          .envelop-contact-content .envelop-address .social-stamps .stamp .background:hover, .envelop-contact-content .envelop-address .social-stamps .stamp .background:active, .envelop-contact-content .envelop-address .social-stamps .stamp .background:focus {
+            -webkit-transition: background-color 1200ms ease;
+            -moz-transition: background-color 1200ms ease;
+            -ms-transition: background-color 1200ms ease;
+            -o-transition: background-color 1200ms ease;
+            transition: background-color 1200ms ease;
+            background-color: #764A22; }
+        .envelop-contact-content .envelop-address .social-stamps .stamp .facebook {
+          background-color: #4267B2;
+          -webkit-transition: background-color 1200ms ease;
+          -moz-transition: background-color 1200ms ease;
+          -ms-transition: background-color 1200ms ease;
+          -o-transition: background-color 1200ms ease;
+          transition: background-color 1200ms ease; }
+        .envelop-contact-content .envelop-address .social-stamps .stamp .linkedin {
+          background-color: #41607D;
+          -webkit-transition: background-color 1200ms ease;
+          -moz-transition: background-color 1200ms ease;
+          -ms-transition: background-color 1200ms ease;
+          -o-transition: background-color 1200ms ease;
+          transition: background-color 1200ms ease; }
+        .envelop-contact-content .envelop-address .social-stamps .stamp .twitter {
+          background-color: #5DAEC5;
+          -webkit-transition: background-color 1200ms ease;
+          -moz-transition: background-color 1200ms ease;
+          -ms-transition: background-color 1200ms ease;
+          -o-transition: background-color 1200ms ease;
+          transition: background-color 1200ms ease; }
+        .envelop-contact-content .envelop-address .social-stamps .stamp .behance {
+          background-color: #5D9ABF;
+          -webkit-transition: background-color 1200ms ease;
+          -moz-transition: background-color 1200ms ease;
+          -ms-transition: background-color 1200ms ease;
+          -o-transition: background-color 1200ms ease;
+          transition: background-color 1200ms ease; }
+        .envelop-contact-content .envelop-address .social-stamps .stamp .github {
+          background-color: #555555;
+          -webkit-transition: background-color 1200ms ease;
+          -moz-transition: background-color 1200ms ease;
+          -ms-transition: background-color 1200ms ease;
+          -o-transition: background-color 1200ms ease;
+          transition: background-color 1200ms ease; }
+  .envelop-contact-content .air-mail-stamp {
+    float: right;
+    -ms-transform: rotate(12deg);
+    -webkit-transform: rotate(12deg);
+    transform: rotate(12deg);
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    padding: 5px;
+    background: #A6763E;
+    position: relative;
+    background: radial-gradient(transparent 0px, transparent 3px, #A6763E 2px, #A6763E);
+    background-size: 10px 10px;
+    background-position: -5px -5px; }
+    @media (min-width: 768px) {
+      .envelop-contact-content .air-mail-stamp {
+        margin: 15px; } }
+    .envelop-contact-content .air-mail-stamp .background {
+      background-color: #764A22;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      padding-top: 10%; }
+      .envelop-contact-content .air-mail-stamp .background i {
+        font-size: 50px;
+        padding: 0;
+        margin: 0;
+        color: #A6763E;
+        line-height: 100%;
+        position: relative; }
+      .envelop-contact-content .air-mail-stamp .background span {
+        font-size: 20px;
+        display: block;
+        color: #A6763E;
+        padding: 0px;
+        margin: 0px;
+        font-weight: bold;
+        margin-top: 1%; }
+  .envelop-contact-content .form-group:before {
+    position: absolute;
+    display: block;
+    content: '';
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px; }
+  .envelop-contact-content .form-group .form-control-msg {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 10px; }
+  .envelop-contact-content .form-group.has-error input {
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+  .envelop-contact-content .form-group.has-error textarea {
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+  .envelop-contact-content .form-group.has-error:before {
+    background-color: transparent; }
+  .envelop-contact-content .form-group input, .envelop-contact-content .form-group textarea {
+    color: #fff;
+    border: 0;
+    background-color: transparent;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 1px dotted #fff; }
+    .envelop-contact-content .form-group input:focus, .envelop-contact-content .form-group textarea:focus {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      border-bottom: 1px solid #fff; }
+  .envelop-contact-content .form-group textarea {
+    min-height: 5em;
+    resize: none; }
+  .envelop-contact-content .form-group input::-webkit-input-placeholder {
+    color: #fff; }
+  .envelop-contact-content .form-group input::-moz-placeholder {
+    color: #fff; }
+  .envelop-contact-content .form-group input:-ms-input-placeholder {
+    color: #fff; }
+  .envelop-contact-content .form-group input:-moz-placeholder {
+    color: #fff; }
+  .envelop-contact-content .form-group textarea::-webkit-input-placeholder {
+    color: #fff; }
+  .envelop-contact-content .form-group textarea::-moz-placeholder {
+    color: #fff; }
+  .envelop-contact-content .form-group textarea:-ms-input-placeholder {
+    color: #fff; }
+  .envelop-contact-content .form-group textarea:-moz-placeholder {
+    color: #fff; }
+  .envelop-contact-content .envelop-btn {
+    -webkit-transition: all 320ms ease;
+    -moz-transition: all 320ms ease;
+    -ms-transition: all 320ms ease;
+    -o-transition: all 320ms ease;
+    transition: all 320ms ease;
+    color: #764A22; }
+    .envelop-contact-content .envelop-btn:hover, .envelop-contact-content .envelop-btn:focus, .envelop-contact-content .envelop-btn:active {
+      -webkit-transition: all 320ms ease;
+      -moz-transition: all 320ms ease;
+      -ms-transition: all 320ms ease;
+      -o-transition: all 320ms ease;
+      transition: all 320ms ease;
+      background-color: #764A22;
+      color: #fff; }
+  .envelop-contact-content .form-control-msg {
+    display: none; }
+  .envelop-contact-content .has-error .form-control-msg {
+    border: none;
+    display: block; }
+
+/*# sourceMappingURL=envelop-style.css.map */

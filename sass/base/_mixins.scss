@@ -1,0 +1,39 @@
+/*
+    @package envelop Contact Form
+*/
+
+/*
+    Mixins
+    ------------------------------------------------
+*/
+
+@mixin animate ( $attr, $time){
+    -webkit-transition: $attr $time ease;
+    -moz-transition: $attr $time ease;
+    -ms-transition: $attr $time ease;
+    -o-transition: $attr $time ease;
+    transition: $attr $time ease;
+}
+
+@mixin transform( $val ) {
+    -webkit-transform: $val;
+    -moz-transform: $val;
+    -ms-transform: $val;
+    -o-transform: $val;
+    transform: $val;
+}
+
+@mixin backgroundGradient( $solid , $deg , $first-color , $second-color ){
+    /*Background Gradiant*/
+    background: $solid; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient($deg, $first-color, $second-color); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient( $deg, $first-color, $second-color); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient( $deg, $first-color, $second-color); /* For Firefox 3.6 to 15 */
+    background: linear-gradient( $deg, $first-color, $second-color); /* Standard syntax */
+}
+
+@mixin rotateMixin($deg){
+    -ms-transform: rotate($deg); 
+    -webkit-transform: rotate($deg); 
+    transform: rotate($deg);
+}

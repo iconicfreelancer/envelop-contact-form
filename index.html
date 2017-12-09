@@ -1,0 +1,152 @@
+<!-- @package envelop Contact Form -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width">
+    <title>Mail Envelop Contact Form</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/envelop-style.css">
+</head>
+<body>
+    
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 text-center col-md-offset-3">
+            <img src="img/envelop.png" class="envelop-logo" alt="Envelop Contact Form">
+                <h1>Mail Envelop Contact Form</h1>
+                <h4>100% CSS Responsive Design using Sass, Bootstrap & Fontawesome icons</h4>
+                <p>Download source files at Github</p>
+            
+        </div><!-- .col-md-6 -->
+    </div><!-- .row -->
+
+    <!-- Center Aligned Bootstrap Grid -->
+    <div class="col-lg-6 col-md-8 col-lg-offset-3 col-md-offset-2">
+
+        <!-- Form Code Starts Here -->
+        <form id="js-envelop-contact" action="#" method="post">
+        
+            <div class="envelop-contact-background">
+                
+                <div class="envelop-loader hidden table">
+                    <div class="table-cell">
+
+                        <div class="text-info form-control-msg js-form-submission">
+
+                            <div class="sliding-arrow-loader">
+                                <div class="arrow"><i class="fa fa-caret-right"></i></div>
+                                <div class="arrow"><i class="fa fa-caret-right"></i></div>
+                                <div class="arrow"><i class="fa fa-caret-right"></i></div>
+                                <div class="arrow"><i class="fa fa-caret-right"></i></div>
+                                <div class="arrow"><i class="fa fa-caret-right"></i></div>
+                                <div class="arrow"><i class="fa fa-caret-right"></i></div>
+                            </div><!-- .sliding-arrow-loader -->
+                            submitting, please wait..
+
+                        </div><!-- .text-info -->
+                    
+                        <div class="text-success form-control-msg js-form-success hidden">
+                            <i class="fa fa-check-circle"></i>
+                            <span>Message Successfully submitted, thank you!</span>
+                            <a class="js-close-overlay"><i class="fa fa-window-close close-overlay"></i></a>
+                        </div><!-- .text-success -->
+
+                        <div class="text-danger form-control-msg js-form-error hidden">
+                            <i class="fa fa-exclamation-triangle"></i>
+                            <span>There was a problem with the Contact Form, please try again!</span>
+                            <a class="js-close-overlay"><i class="fa fa-window-close close-overlay"></i></a>
+                        </div><!-- .text-danger -->
+                    </div><!-- .table-cell -->
+                </div><!-- .envelop-loader -->   
+
+                <div class="envelop-contact-border">
+                    <div class="envelop-contact-content">
+                    
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="envelop-address">
+                                    <i class="fa fa-home"></i> <span>A-12-9, No. 1, Jalan 3/93A, Warisan City View, Jalan Cheras, 56100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</span>
+                                
+                                    <div class="social-stamps">
+                                        <div class="stamp">
+                                            <a href="https://www.facebook.com/Freelance-SEO-Consultant-1172267362887725/" target="_blank">
+                                                <div class="background facebook">
+                                                    <i class="fa fa-facebook"></i>
+                                                </div>
+                                            </a>
+                                        </div><!-- .stamp -->
+                                        <div class="stamp">
+                                            <a href="https://www.linkedin.com/company/freelance-seo-consultant/" target="_blank">
+                                                <div class="background linkedin">
+                                                    <i class="fa fa-linkedin"></i>
+                                                </div>
+                                            </a>
+                                        </div><!-- .stamp -->
+                                        <div class="stamp">
+                                            <a href="https://twitter.com/iconicfreelance" target="_blank">
+                                                <div class="background twitter">
+                                                    <i class="fa fa-twitter"></i>
+                                                </div>
+                                            </a>
+                                        </div><!-- .stamp -->
+                                        <div class="stamp">
+                                            <a href="https://github.com/iconicfreelancer" target="_blank">
+                                                <div class="background github">
+                                                    <i class="fa fa-github"></i>
+                                                </div>
+                                            </a>
+                                        </div><!-- .stamp -->
+                                        <div class="stamp">
+                                            <a href="https://www.behance.net/iconicfreelancer" target="_blank">
+                                                <div class="background behance">
+                                                    <i class="fa fa-behance"></i>
+                                                </div>
+                                            </a>
+                                        </div><!-- .stamp -->
+                                    </div><!-- .social-stamps -->
+                                </div><!-- .envelop-address -->
+                            </div><!-- .col-lg-6 -->
+
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="air-mail-stamp">
+                                    <div class="background">
+                                        <i class="fa fa-plane"></i>
+                                        <span>Air Mail</span>
+                                    </div>
+                                </div><!-- .air-mail-stamp -->
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name" id="name" name="name" >
+                                    <small class="text-danger form-control-msg">Your Name is Required</small>  
+                                </div><!-- .form-group -->
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your Email" id="email" name="email" >  
+                                    <small class="text-danger form-control-msg">Your Email is Required</small>  
+                                </div><!-- .form-group -->
+                                <div class="form-group">
+                                    <textarea name="message" id="message" class="form-control" placeholder="Your Message" ></textarea> 
+                                    <small class="text-danger form-control-msg">Your Message is Required</small>   
+                                </div><!-- .form-group -->
+                                <div class="text-right">
+                                    <button type="submit" class="btn envelop-btn">Submit</button>   
+                                </div><!-- .text-right -->
+                            </div><!-- .col-lg-6 -->
+                        </div><!-- .row -->
+                    </div><!-- .envelop-contact-content -->
+                </div><!-- .envelop-contact-border -->
+            </div><!-- .envelop-contact-background -->
+                
+        </form><!-- .js-envelop-contact -->
+        <!-- Form Code Ends Here -->
+        
+    </div><!-- .col-lg-6 -->
+    
+</div><!-- .container-fluid -->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/envelop-script.js"></script>
+</body>
+</html>

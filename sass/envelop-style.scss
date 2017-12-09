@@ -1,0 +1,376 @@
+/*
+    @package envelop Contact Form
+*/
+.envelop-logo{    
+    margin-top:10px;
+    display: block;
+    float: left;
+}
+
+@import 'base/mixins';  //mixins
+
+#js-envelop-contact{
+    margin:0 -15px;
+}
+.envelop-contact-background{
+    min-height: 460px;
+    width: 100%;
+    position:relative;
+    
+    //Background Gradiant
+    @include backgroundGradient( red, -45deg, #A6743C, #E1C59A );
+
+    @media (max-width: 767px) {
+        min-height: 650px;
+    }
+
+}
+.envelop-loader{
+    //CSS Loader
+    position:absolute;
+    min-height: 460px;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 3;
+    
+    font-size:200%;
+    padding: 0 20%;
+    text-shadow: 2px 2px #000;
+
+    @media (max-width: 767px) {
+        height: 100%;
+        min-height: 23.5em;
+        padding:0;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+        height: 100%;
+        min-height: 16em;
+        padding:0;
+    }
+    //Inprogress text
+    .text-info{ color: #fff; }
+
+    .text-danger, .text-success{
+        //Success and failure messages
+        color: #fff;
+        .fa-check-circle{
+            display: block;
+            font-size: 400%;
+        }
+        .fa-exclamation-triangle{
+            display: block;
+            font-size: 400%;
+            color: #FFEB00;
+        }
+        .span{ display: block; }
+    }//.text-danger, .text-success
+
+    .close-overlay{
+        position:absolute;
+        top:5px;
+        right: 5px;
+        font-size: 100%;
+        color:#fff;cursor:pointer;
+    }
+
+    .sliding-arrow-loader{
+    position: absolute;
+    top: 30%;
+    left: 55%;
+    font-size:300%;
+    transform: rotate(90deg);
+
+    @media (max-width: 767px) {
+        left:60%;
+    }
+
+        .arrow{
+            //Slider Arrow Animation
+            width: 0.4em;
+            height: 0.2em;
+            margin-bottom:-5px;
+            animation: 2050ms iconAnimation ease-in-out infinite;
+            opacity: 0;
+
+            .fa{
+                color: #fff;
+                @include rotateMixin(-90deg);
+                padding:0px;
+                margin:0px;
+            }
+
+            @for $i from 1 through 6{
+                &:nth-child(#{$i}){
+                    animation-delay: #{ (($i * -1)+6)*0.25 }s;
+                }
+            }
+
+            .no-cssanimations &{ opacity: 1; }
+        }//.arrow
+
+        @keyframes iconAnimation {
+            0%{ opacity: 1; }
+            50%{ opacity: 0; }
+            100%{ opacity: 0; }
+        }//@keyframes iconAnimation
+    }//.sliding-arrow-loader
+}//.envelop-loader
+
+.table{
+    display: table;
+    width:100%;
+    height: 100%;
+}
+
+.table-cell{
+    display: table-cell;
+    width:100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.envelop-contact-border{
+    min-height: inherit;
+    width:inherit;
+  
+    //Border Gradient
+        background: -webkit-repeating-linear-gradient(
+            45deg, 
+            #B30003, #B30003 4%, //red
+            transparent 4%, transparent 8%, //transparent
+            #00006E 8%, #00006E 12%, //blue
+            transparent 12%, transparent 16%//transparent
+            );
+        background: repeating-linear-gradient(
+            45deg, 
+            #B30003, #B30003 4%, //red
+            transparent 4%, transparent 8%, //transparent
+            #00006E 8%, #00006E 12%, //blue
+            transparent 12%, transparent 16%//transparent
+        );
+    }
+
+.envelop-contact-content{
+    //All content goes in here
+    position:relative;
+    top:20px;
+    margin:20px;
+    padding:20px;
+    font-size: 100%;
+    line-height: 150%;
+    min-height:410px;
+    //Background Gradiant
+    @include backgroundGradient( red, -45deg, #A6743C, #E1C59A );
+
+    @media (max-width:767px){
+            
+            min-height:615px;
+        }
+    
+    .envelop-address{
+        //left side of Envelop
+        position:relative;
+        padding:0;
+        margin:0;
+        padding-top:3em;
+        color:#A6763E;
+        min-height: 380px;
+        
+        @media (max-width: 767px) {
+
+            padding-top:5%;
+            min-height: 210px;
+            
+        }
+
+        .social-stamps{
+
+            position: absolute;
+            bottom:0;
+            
+            .stamp {
+                //Each Social Stamp
+                width: 50px;
+                height: 50px;
+                display: inline-block;
+                padding: 5px;
+                background: #764A22;
+                margin:0.2em 0;
+                //Radial Gradient to use stamp cutout
+                background: radial-gradient(
+                    transparent 0px, 
+                    transparent 3px, 
+                    #764A22 2px,
+                    #764A22
+                );
+                //Adjust Gradient Size
+                background-size: 10px 10px;
+                //Offset to move holes to edges
+                background-position: -5px -5px;
+                
+                .background{
+                    //Each Social Stamp Background
+                    width:100%;
+                    height: 100%;
+                    text-align: center;
+                    padding-top:15%;
+                    i{padding:5%;font-size:24px;color:#fff;line-height:100%;}
+                    
+                    &:hover,
+                    &:active,
+                    &:focus{
+                        @include animate( background-color, 1200ms );
+                        background-color: #764A22;
+                    }
+                }//.background
+                
+                //Individual Social Icon Background
+                .facebook{ background-color:#4267B2; @include animate( background-color, 1200ms ); }
+                .linkedin{ background-color: #41607D; @include animate( background-color, 1200ms ); }
+                .twitter{ background-color: #5DAEC5; @include animate( background-color, 1200ms ); }
+                .behance{ background-color: #5D9ABF; @include animate( background-color, 1200ms ); }
+                .github{ background-color: #555555; @include animate( background-color, 1200ms ); }
+
+            }//.stamp
+        }//.social-stamps
+    }//.envelop-address
+
+
+
+    .air-mail-stamp{
+        //Top Right Stamp [Air Mail Stamp]
+        float: right;
+        @include rotateMixin(12deg);
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        padding: 5px;
+        background: #A6763E;
+        position: relative;
+        
+        @media (min-width: 768px){
+            margin:15px;
+        }
+
+        //Radial Gradient to use stamp cutout
+        background: radial-gradient(
+            transparent 0px, 
+            transparent 3px, 
+            #A6763E 2px,
+            #A6763E
+        );
+        //Adjust Gradient Size
+        background-size: 10px 10px;
+        //Offset to move holes to edges
+        background-position: -5px -5px;
+
+        .background{
+            //Air Mail Stamp Background
+            background-color:#764A22;
+            width:100%;
+            height: 100%;
+            text-align: center;
+            padding-top:10%;
+                i{
+                    font-size:50px;
+                    padding:0;
+                    margin:0;
+                    color:#A6763E;
+                    line-height:100%;
+                    position:relative;
+                }//i
+                span{
+                    font-size:20px;
+                    display:block;
+                    color:#A6763E;
+                    padding:0px;
+                    margin:0px;
+                    font-weight:bold;
+                    margin-top:1%;
+                }//span
+        }//.background
+    
+    }//.air-mail-stamp
+    
+    .form-group {
+        &:before {
+            position: absolute;
+            display: block;
+            content: '';
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;   
+        }
+        .form-control-msg {
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 10px;
+        }
+        &.has-error {
+            input{ -webkit-box-shadow: none; box-shadow: none; }
+            textarea{ -webkit-box-shadow: none; box-shadow: none; }
+            &:before { background-color: transparent; }
+        }
+
+
+        input, textarea{
+            color:#fff;
+            border:0;
+            background-color: transparent;
+            border-radius: 0;
+            -webkit-appearance: none;
+
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border-bottom:1px dotted #fff;
+
+            &:focus{
+                -webkit-box-shadow: none;
+                 box-shadow: none;
+                 border-bottom:1px solid #fff;
+            }
+        }//input, textarea
+        
+        textarea{
+            min-height: 5em;
+            resize: none;
+        }
+
+        // Change Place Holder Color
+        input::-webkit-input-placeholder { color: #fff; }
+        input::-moz-placeholder { color: #fff; }
+        input:-ms-input-placeholder { color: #fff; }
+        input:-moz-placeholder { color: #fff; }
+        textarea::-webkit-input-placeholder { color: #fff; }
+        textarea::-moz-placeholder { color: #fff; }
+        textarea:-ms-input-placeholder { color: #fff; }
+        textarea:-moz-placeholder { color: #fff; }
+
+    }//.form-group
+
+    .envelop-btn{
+        //Submit Button
+        @include animate( all, 320ms );
+        color:#764A22;
+        &:hover,
+        &:focus,
+        &:active{
+            @include animate( all, 320ms );
+            background-color: #764A22;
+            color: #fff;
+        }
+
+
+    }//.envelop-btn
+    
+    //Bootstrap Inline Error Messages
+    .form-control-msg { display: none; }
+
+    .has-error {
+        //Display Error Messages
+        .form-control-msg { border:none; display: block; }
+    }
+
+}//.envelop-contact-content
